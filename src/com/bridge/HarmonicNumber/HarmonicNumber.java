@@ -1,8 +1,22 @@
 package com.bridge.HarmonicNumber;
 
-public class HarmonicNumber {
-    public static void main(String[] args) {
+import java.util.Scanner;
 
-        System.out.println("\n Welcome, This program prints the nth harmoinic value for a given number" );
+public class HarmonicNumber {
+    public static void main(String arg[]) {
+        double a;
+        Scanner sc = new Scanner(System.in);
+        System.out.println("Enter a number");
+        a = sc.nextDouble();
+        double h = harmonicCal(a);
+        System.out.println("Harmonic value = " + h);
+    }
+
+    static double harmonicCal(double n) {
+        double sum = 0;
+        for (double i = 1; i <= n; i++) {
+            sum = sum + (1 / i);
+        }
+        return sum;
     }
 }
